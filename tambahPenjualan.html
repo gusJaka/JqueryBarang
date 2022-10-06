@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Jquery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="d-flex justify-content-center m-5">
+        <h1 class="bold">CI JQUERY Example</h1>
+    </div>
+
+    <form action="http://redsystem.id/test/crud/insert" method="post" target="_blank">
+        <input type="hidden" name="total" value="">
+
+        <div class="row my-3">
+            <label class="col-2 col-form-label">No Faktur</label>
+            <div class="col-10">
+                <input type="text" class="form-control" name="noFaktur">
+            </div>
+        </div>
+        <div class="row my-3">
+            <label class="col-2 col-form-label">Tanggal Pembayaran</label>
+            <div class="col-10">
+                <input type="text" class="form-control" name="tanggalPembayaran">
+            </div>
+        </div>
+        <div class="row my-3 mb-5">
+            <label class="col-2 col-form-label">Keterangan</label>
+            <div class="col-10">
+                <input type="text" class="form-control" name="keterangan">
+            </div>
+        </div>
+        <a class="btn btn-success" id="tambahBarang" href="#">
+            Tambah Barang
+        </a>
+        <div class="my-3 mb-5">
+            <table class="table table-bordered" id="tableRow">
+                <thead>
+                <tr>
+                    <th>Barang</th>
+                    <th>Harga</th>
+                    <th>Qty</th>
+                    <th>PPN (10%)</th>
+                    <th>Sub Total</th>
+                    <th>Menu</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row my-3">
+            <label class="col-2">Total</label>
+            <label class="col-10 total">-</label>
+        </div>
+        <div class="row my-3">
+            <label class="col-2 col-form-label">Pembayaran</label>
+            <div class="col-10">
+                <input type="number" class="form-control" name="pembayaran" placeholder="0">
+            </div>
+        </div>
+        <div class="row my-3">
+            <label class="col-2">Kembalian</label>
+            <label class="col-10 kembalian">-</label>
+        </div>
+
+        <button type="submit" class="btn btn-success my-3">
+            Simpan
+        </button>
+        <a class="btn btn-warning my-3" href="home.html">
+            Kembali
+        </a>
+    </form>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Daftar Barang</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Barang</th>
+                        <th>Menu</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableModal">
+                    <tr data-nama="Barang 1"
+                        data-id-barang="1">
+                        <td>1</td>
+                        <td>Barang 1</td>
+                        <td class="text-center">
+                            <button class="btn btn-success barangPilih">Pilih</button>
+                        </td>
+                    </tr>
+                    <tr data-nama="Barang 2"
+                        data-id-barang="2">
+                        <td>2</td>
+                        <td>Barang 2</td>
+                        <td class="text-center">
+                            <button class="btn btn-success barangPilih">Pilih</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="customJS.js"></script>
+
+</body>
+</html>
